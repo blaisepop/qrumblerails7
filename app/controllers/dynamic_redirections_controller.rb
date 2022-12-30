@@ -54,7 +54,7 @@ class DynamicRedirectionsController < ApplicationController
   end
   
   def dynamic_redirection_params
-    params.require(:dynamic_redirection).permit(:destination, :created_by, :qr_code, :key_value)
+    params.require(:dynamic_redirection).permit(:destination, :created_by, :qr_code, :key_value, :scan_count)
   end
 
   def set_dynamic_redirection

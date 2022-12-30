@@ -47,6 +47,7 @@ class DynamicRedirectionsController < ApplicationController
   end
 
   def redirect
+    puts "Redirection in progress to " + @dynamic_redirection.destination
     redirect_to @dynamic_redirection.destination
   end
   

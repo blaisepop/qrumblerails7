@@ -5,6 +5,7 @@
     <tr>
       <th scope="col">Key</th>
       <th scope="col">Url</th>
+      <th scope="col">Scan count</th>
       <th scope="col">See code</th>
     </tr>
   </thead>
@@ -13,6 +14,7 @@
     <tr>
       <td> <%= x.key_value %> </td>
       <td> <%= x.destination %> </td>
+      <td> <%= x.scan_count %> </td>
       <td> <%= link_to '<i class="fa-solid fa-qrcode"></i>'.html_safe ,edit_dynamic_redirection_path(x.key_value)  %> </td>
     </tr>
     <tr>

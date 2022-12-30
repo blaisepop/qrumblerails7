@@ -15,11 +15,11 @@ class DynamicRedirectionsController < ApplicationController
 
   def create
     @dynamic_redirection = DynamicRedirection.new(dynamic_redirection_params)
-    if @dynamic_redirection.save
-        flash[:alert] = "Booking has been created successfully"
+      if @dynamic_redirection.save
+        flash[:alert] = "QR code has been created successfully"
         redirect_to dynamic_redirections_path
       else
-        flash[:alert] = "Booking rejected"
+        flash[:alert] = "QR code rejected"
         render 'new'
       end
   end
@@ -51,7 +51,7 @@ class DynamicRedirectionsController < ApplicationController
   end
   
   def dynamic_redirection_params
-    params.require(:redirection).permit(:destination, :created_by, :qr_code, :key_value)
+    params.require(:dynamic_redirection).permit(:destination, :created_by, :qr_code, :key_value)
   end
 
   def set_dynamic_redirection

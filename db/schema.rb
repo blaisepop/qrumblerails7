@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_30_081553) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_30_093543) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "dynamic_redirections", force: :cascade do |t|
+    t.string "key_value"
+    t.string "destination"
+    t.string "type"
+    t.integer "scan_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "created_by"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

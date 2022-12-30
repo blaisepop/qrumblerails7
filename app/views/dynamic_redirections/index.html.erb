@@ -1,0 +1,23 @@
+<h1>All wonderful redirections</h1>
+<%= link_to "Generate a new QR", new_dynamic_redirection_path %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Key</th>
+      <th scope="col">Url</th>
+      <th scope="col">See code</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @entries.each do |x| %>
+    <tr>
+      <td> <%= x.key_value %> </td>
+      <td> <%= x.destination %> </td>
+      <td> <%= link_to 'hello'.html_safe ,edit_dynamic_redirection_path(x.key_value)  %> </td>
+    </tr>
+    <tr>
+    <% end %>
+    
+      </tbody>
+</table>

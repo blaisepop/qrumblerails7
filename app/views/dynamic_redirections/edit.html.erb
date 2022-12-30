@@ -1,10 +1,15 @@
 <div class="container">
-  <%= render "form" , redirection: @dynamic_redirection%>
+    <%= @svg.html_safe %><br/>
+  <div class="card mt-3" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Host url: <%= @qr_string %></li>
+      <li class="list-group-item">Destination: <%= @dynamic_redirection.destination %></li>
+      <li class="list-group-item">Scanned <%= @dynamic_redirection.scan_count %> times</li>
+    </ul>
+  </div>
+<%= render "form" , redirection: @dynamic_redirection%>
   <p><%= link_to dynamic_redirection_path, method: :delete, data: { confirm: "Are you sure?" } do %>
     <h2 button type="button" class="btn btn-danger mt-3">Delete partner</h2></button>
   <% end %></p>
-  <%= @svg.html_safe %><br/>
-  <%= @qr_string %>
-  <p><%= @dynamic_redirection.destination %></p>
-  <p>Scan count<%= @dynamic_redirection.scan_count %></p>
+
 </div>

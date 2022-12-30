@@ -10,6 +10,7 @@ puts 'Creating entries...'
     key_value: SecureRandom.hex,
     destination: Faker::Internet.url,
     created_by: 1,
+    scan_count: rand(1..10)
   )
   entry.save!
 end

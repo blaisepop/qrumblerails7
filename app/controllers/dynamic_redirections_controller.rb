@@ -48,6 +48,7 @@ class DynamicRedirectionsController < ApplicationController
 
   def redirect
     puts "Redirection in progress to " + @dynamic_redirection.destination
+    @dynamic_redirection.scan_count ||= 0
     @dynamic_redirection.scan_count += 1
     @dynamic_redirection.save
     redirect_to @dynamic_redirection.destination, allow_other_host: true
